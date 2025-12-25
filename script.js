@@ -8,6 +8,33 @@ const modalTitle = document.getElementById('modalTitle');
 const modalMessage = document.getElementById('modalMessage');
 const modalExtra = document.getElementById('modalExtra');
 
+// 🎭 Perde Açılış Animasyonu
+const curtainIntro = document.getElementById('curtainIntro');
+const openCurtainBtn = document.getElementById('openCurtain');
+
+// Perde açma fonksiyonu
+function openCurtain() {
+    curtainIntro.classList.add('open');
+    
+    // Konfeti efekti
+    setTimeout(() => {
+        createConfetti();
+    }, 500);
+    
+    // Perdeyi tamamen kaldır
+    setTimeout(() => {
+        curtainIntro.classList.add('hidden');
+    }, 2000);
+}
+
+// Perde açma butonu
+if (openCurtainBtn) {
+    openCurtainBtn.addEventListener('click', openCurtain);
+}
+
+// 🔄 Her girişte açılan kutuları sıfırla
+localStorage.removeItem('adventCalendarOpened');
+
 // Başlık ve alt başlığı güncelle
 document.querySelector('h1').textContent = calendarConfig.title;
 document.querySelector('.subtitle').textContent = calendarConfig.subtitle;

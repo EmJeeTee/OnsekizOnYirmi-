@@ -8,6 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 🎭 Perde Açılış Animasyonu -->
+    <div class="curtain-intro" id="curtainIntro">
+        <div class="curtain curtain-left"></div>
+        <div class="curtain curtain-right"></div>
+        <div class="intro-content">
+            <div class="intro-photo">
+                <!-- Buraya kendi fotoğrafını ekle: src="foto.jpg" -->
+                <img src="photo.jpg" alt="Bizim Fotoğrafımız" onerror="this.style.display='none'; this.parentElement.innerHTML='💕';">
+            </div>
+            <h2 class="intro-title">Hoş Geldin Aşkım</h2>
+            <p class="intro-subtitle">Sana özel bir sürprizim var...</p>
+            <button class="intro-button" id="openCurtain">✨ Perdeyi Aç ✨</button>
+        </div>
+        <div class="sparkles">
+            <span class="sparkle">✨</span>
+            <span class="sparkle">💫</span>
+            <span class="sparkle">⭐</span>
+            <span class="sparkle">✨</span>
+            <span class="sparkle">💫</span>
+            <span class="sparkle">⭐</span>
+        </div>
+    </div>
+
     <div class="snowflakes" aria-hidden="true">
         <div class="snowflake">❄</div>
         <div class="snowflake">❅</div>
