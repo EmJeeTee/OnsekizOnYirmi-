@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Kar Taneleri Animasyonu */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: #fff;
+    font-size: 1em;
+    text-shadow: 0 0 5px #fff;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+.snowflake:nth-child(1) { left: 5%; animation-duration: 10s; animation-delay: 0s; font-size: 1.2em; }
+.snowflake:nth-child(2) { left: 15%; animation-duration: 12s; animation-delay: 2s; font-size: 0.8em; }
+.snowflake:nth-child(3) { left: 25%; animation-duration: 8s; animation-delay: 4s; font-size: 1.5em; }
+.snowflake:nth-child(4) { left: 35%; animation-duration: 14s; animation-delay: 1s; font-size: 1em; }
+.snowflake:nth-child(5) { left: 45%; animation-duration: 9s; animation-delay: 3s; font-size: 1.3em; }
+.snowflake:nth-child(6) { left: 55%; animation-duration: 11s; animation-delay: 5s; font-size: 0.9em; }
+.snowflake:nth-child(7) { left: 65%; animation-duration: 13s; animation-delay: 2s; font-size: 1.4em; }
+.snowflake:nth-child(8) { left: 75%; animation-duration: 10s; animation-delay: 4s; font-size: 1.1em; }
+.snowflake:nth-child(9) { left: 85%; animation-duration: 8s; animation-delay: 1s; font-size: 0.7em; }
+.snowflake:nth-child(10) { left: 95%; animation-duration: 12s; animation-delay: 3s; font-size: 1.2em; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 0;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 5s ease infinite;
+    text-shadow: none;
+    margin-bottom: 10px;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    font-weight: 300;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+/* Calendar Day */
+.calendar-day {
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #2d2d44, #1a1a2e);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-day::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(255,107,107,0.1), rgba(84,160,255,0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.calendar-day:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(255, 107, 107, 0.5);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.2);
+}
+
+.calendar-day:hover::before {
+    opacity: 1;
+}
+
+.calendar-day.locked {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.calendar-day.locked:hover {
+    transform: none;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-day.opened {
+    background: linear-gradient(145deg, #ff6b6b, #ee5a5a);
+    border-color: #feca57;
+}
+
+.calendar-day.opened .day-number {
+    color: white;
+}
+
+.day-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    z-index: 1;
+}
+
+.day-icon {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    z-index: 1;
+}
+
+.lock-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #2d2d44, #1a1a2e);
+    border-radius: 25px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 107, 107, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.modal-day {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+
+.modal-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.modal-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.modal-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.modal-extra {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.modal-extra img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.modal-extra a {
+    color: #54a0ff;
+    text-decoration: none;
+}
+
+.modal-extra a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+    }
+    
+    .day-number {
+        font-size: 1.5rem;
+    }
+    
+    .day-icon {
+        font-size: 1.2rem;
+    }
+    
+    .modal-content {
+        padding: 25px;
+    }
+    
+    .modal-title {
+        font-size: 1.4rem;
+    }
+    
+    .modal-message {
+        font-size: 1rem;
+    }
+    
+    .modal-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    
+    .calendar-day {
+        border-radius: 10px;
+    }
+    
+    .day-number {
+        font-size: 1.3rem;
+    }
+    
+    .day-icon {
+        font-size: 1rem;
+    }
+}
+
+/* Konfeti Animasyonu */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    z-index: 3000;
+    animation: confetti-fall 3s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
