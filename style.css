@@ -99,7 +99,7 @@ body {
 /* Intro İçerik */
 .intro-content {
     position: relative;
-    z-index: 5;
+    z-index: 15;
     text-align: center;
     padding: 40px;
     animation: fadeInUp 1s ease-out;
@@ -194,6 +194,8 @@ body {
         0 5px 20px rgba(255, 107, 107, 0.4),
         0 0 40px rgba(255, 107, 107, 0.2);
     animation: buttonPulse 1.5s ease-in-out infinite;
+    position: relative;
+    z-index: 20;
 }
 
 @keyframes buttonPulse {
