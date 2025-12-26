@@ -12,6 +12,37 @@ const modalExtra = document.getElementById('modalExtra');
 const curtainIntro = document.getElementById('curtainIntro');
 const openCurtainBtn = document.getElementById('openCurtain');
 
+// 🎵 Müzik Kontrolü
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+let isMusicPlaying = false;
+
+function playMusic() {
+    bgMusic.volume = 0.3; // Ses seviyesi %30
+    bgMusic.play().then(() => {
+        isMusicPlaying = true;
+        musicToggle.textContent = '🔊';
+    }).catch(err => {
+        console.log('Müzik için butona tıklayın');
+    });
+}
+
+function toggleMusic() {
+    if (isMusicPlaying) {
+        bgMusic.pause();
+        musicToggle.textContent = '🔇';
+        isMusicPlaying = false;
+    } else {
+        bgMusic.volume = 0.3;
+        bgMusic.play().then(() => {
+            isMusicPlaying = true;
+            musicToggle.textContent = '🔊';
+        });
+    }
+}
+
+musicToggle.addEventListener('click', toggleMusic);
+
 // Perde açma fonksiyonu
 function openCurtain() {
     curtainIntro.classList.add('open');
@@ -21,10 +52,11 @@ function openCurtain() {
         createConfetti();
     }, 500);
     
-    // Perdeyi tamamen kaldır
+    // Perdeyi tamamen kaldır ve müziği başlat
     setTimeout(() => {
         curtainIntro.classList.add('hidden');
-    }, 2000);
+        playMusic(); // 🎵 Müziği başlat
+    }, 1400);
 }
 
 // Perde açma butonu
@@ -217,6 +249,66 @@ document.addEventListener('keydown', (e) => {
 
 // Takvimi başlat
 createCalendar();
+
+// ❄️ Dinamik Kar Animasyonu
+const snowflakesContainer = document.getElementById('snowflakes');
+const snowflakeChars = ['❄', '❅', '❆', '✻', '✼', '❉', '✺'];
+
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.className = 'snowflake';
+    snowflake.textContent = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+    
+    // Rastgele pozisyon (0% - 100%)
+    const leftPos = Math.random() * 100;
+    snowflake.style.left = `${leftPos}%`;
+    
+    // Rastgele boyut (0.6em - 1.8em)
+    const size = 0.6 + Math.random() * 1.2;
+    snowflake.style.fontSize = `${size}em`;
+    
+    // Rastgele düşme süresi (5s - 12s) - daha hızlı
+    const duration = 5 + Math.random() * 7;
+    snowflake.style.animationDuration = `${duration}s`;
+    
+    // Rastgele sürüklenme değerleri (rüzgar efekti)
+    const drift = (Math.random() - 0.5) * 100;
+    const driftEnd = (Math.random() - 0.5) * 100;
+    snowflake.style.setProperty('--drift', `${drift}px`);
+    snowflake.style.setProperty('--drift-end', `${driftEnd}px`);
+    
+    // Rastgele opaklık (0.5 - 1)
+    snowflake.style.opacity = 0.5 + Math.random() * 0.5;
+    
+    snowflakesContainer.appendChild(snowflake);
+    
+    // Animasyon bitince kar tanesini kaldır
+    setTimeout(() => {
+        snowflake.remove();
+    }, duration * 1000);
+}
+
+function startSnowfall() {
+    // Başlangıçta birkaç kar tanesi oluştur
+    for (let i = 0; i < 25; i++) {
+        setTimeout(() => createSnowflake(), i * 100);
+    }
+    
+    // Sürekli rastgele aralıklarla kar tanesi ekle
+    function scheduleNextSnowflake() {
+        // Rastgele aralık: 50ms - 150ms arası (yoğun kar yağışı)
+        const delay = 50 + Math.random() * 100;
+        setTimeout(() => {
+            createSnowflake();
+            scheduleNextSnowflake();
+        }, delay);
+    }
+    
+    scheduleNextSnowflake();
+}
+
+// Kar yağışını başlat
+startSnowfall();
 
 // Sayfa yüklendiğinde hoş geldin mesajı (opsiyonel)
 window.addEventListener('load', () => {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💝 Sana Özel Advent Calendar</title>
+    <title>💝 18/10/2023 💝</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +15,7 @@
         <div class="intro-content">
             <div class="intro-photo">
                 <!-- Buraya kendi fotoğrafını ekle: src="foto.jpg" -->
-                <img src="photo.jpg" alt="Bizim Fotoğrafımız" onerror="this.style.display='none'; this.parentElement.innerHTML='💕';">
+                <img src="img/opening.jpeg" alt="Bizim Fotoğrafımız" onerror="this.style.display='none'; this.parentElement.innerHTML='💕';">
             </div>
             <h2 class="intro-title">Hoş Geldin Aşkım</h2>
             <p class="intro-subtitle">Sana özel bir sürprizim var...</p>
@@ -31,22 +31,23 @@
         </div>
     </div>
 
-    <div class="snowflakes" aria-hidden="true">
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❄</div>
+    <!-- 🎵 Arka Plan Müziği -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="music/romantic.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 🔊 Ses Kontrol Butonu -->
+    <button class="music-toggle" id="musicToggle" title="Müziği Aç/Kapat">
+        🔇
+    </button>
+
+    <div class="snowflakes" id="snowflakes" aria-hidden="true">
+        <!-- JavaScript ile dinamik kar taneleri oluşturulacak -->
     </div>
 
     <div class="container">
         <header>
-            <h1>💝 Sana Özel Advent Calendar 💝</h1>
+            <h1>💝 Türkan Yücebaş 💝</h1>
             <p class="subtitle">Her gün bir sürpriz seni bekliyor...</p>
         </header>
 

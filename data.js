@@ -5,8 +5,8 @@
 const calendarConfig = {
     startDate: "2025-12-01", // Takvimin başlangıç tarihi
     totalDays: 24, // Toplam gün sayısı
-    title: "💝 Sana Özel Advent Calendar 💝",
-    subtitle: "Her gün bir sürpriz seni bekliyor..."
+    title: "💝 Türkan Yücebaş 💝",
+    subtitle: ""
 };
 
 // Her gün için içerik
@@ -18,9 +18,9 @@ const calendarConfig = {
 const calendarData = {
     1: {
         icon: "💕",
-        title: "İlk Gün Sürprizi!",
-        message: "Merhaba aşkım! Bu takvim sana ne kadar değer verdiğimi göstermek için hazırladım. Her gün seni biraz daha mutlu etmek istiyorum. Seni seviyorum! 💝",
-        extra: ""
+        title: "18/10/2023 - ♾️",
+        message: "18 Ekim 2023'te başlayan hikayemizin kısa bir özetini hazırlamaya çalıştım. Umarım beğenirsin :)",
+        extra: "<img src='img/first.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     2: {
         icon: "☕",
