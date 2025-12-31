@@ -203,6 +203,38 @@ function closeModal() {
     modal.classList.remove('active');
 }
 
+// 💌 Mektup Modal Fonksiyonları
+const letterModal = document.getElementById('letterModal');
+const closeLetterBtn = document.getElementById('closeLetter');
+
+function openLetter() {
+    // Mevcut modal'ı kapat
+    modal.classList.remove('active');
+    
+    // Mektup modal'ı aç
+    setTimeout(() => {
+        letterModal.classList.add('active');
+        createConfetti();
+    }, 300);
+}
+
+function closeLetter() {
+    letterModal.classList.remove('active');
+}
+
+// Mektup modal event listeners
+if (closeLetterBtn) {
+    closeLetterBtn.addEventListener('click', closeLetter);
+}
+
+if (letterModal) {
+    letterModal.addEventListener('click', (e) => {
+        if (e.target === letterModal) {
+            closeLetter();
+        }
+    });
+}
+
 // Konfeti efekti
 function createConfetti() {
     const colors = ['#ff6b6b', '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd', '#00d2d3'];

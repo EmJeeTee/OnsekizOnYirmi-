@@ -4,7 +4,7 @@
 
 const calendarConfig = {
     startDate: "2025-12-01", // Takvimin başlangıç tarihi
-    totalDays: 24, // Toplam gün sayısı
+    totalDays: 12, // Toplam gün sayısı
     title: "💝 Türkan Yücebaş 💝",
     subtitle: ""
 };
@@ -23,138 +23,67 @@ const calendarData = {
         extra: "<img src='img/first.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     2: {
-        icon: "☕",
-        title: "Kahve Zamanı",
-        message: "Bugün seninle kahve içmek isterdim. Ama uzaktayken bile her yudum kahvede seni düşünüyorum. Favori kahven her zaman aklımda! ☕💕",
-        extra: ""
+        icon: "☃️",
+        title: "Yeni yıl",
+        message: "Hayal ettiğimiz yeni yıla beraber girebildiğimiz gözlerine bakıp geçmişe ve geleceğe dalabildiğim için çok mutluyum. Yeni yılımız kutlu olsun! 💕",
+        extra: "<img src='img/2.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     3: {
         icon: "🎵",
         title: "Şarkımız",
-        message: "Bu şarkıyı her duyduğumda sen aklıma geliyorsun. Birlikte dinlediğimiz o anlar... Hepsini biriktiriyorum kalbimde.",
-        extra: "<a href='https://open.spotify.com' target='_blank'>🎧 Şarkıyı Dinle</a>"
+        message: "İkimizin de ilk tanıştığımızdaki birbirimize söylediği şarkıları hatırlıyor musun?",
+        extra: `<a href='https://open.spotify.com/intl-tr/track/4T73JmNNhtkFBzjRfCeMzN?si=151b88a003cb4dac' target='_blank' style='font-size: 2rem; text-decoration: none;'>👧🎧</a>
+                <br><a href='https://open.spotify.com/intl-tr/track/5n1MwdIRqFtsFO4qp86USa?si=2611534d13cc4a26' target='_blank' style='font-size: 2rem; text-decoration: none;'>👦🎧</a>`
     },
     4: {
         icon: "📸",
         title: "Anılarımız",
         message: "Seninle geçirdiğimiz her an bir hazine. Bu fotoğraf benim favorilerimden... Daha nice güzel anılara! 📸",
-        extra: "<p style='color: #feca57;'>Buraya özel bir fotoğraf ekleyebilirsin!</p>"
+        extra: "<img src='img/4.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     5: {
-        icon: "🌟",
-        title: "Sen Bir Yıldızsın",
-        message: "Hayatıma ışık saçıyorsun. Karanlık gecelerde bile sen benim yol gösterenim. Parlak yıldızım benim! ⭐",
-        extra: ""
+        icon: "🌞",
+        title: "Sen Benim Güneşimsin",
+        message: "Hayatıma ışık saçıyorsun. Karanlık gecelerde bile sen benim yol gösterenim. Parlak yıldızım benim! ☀️",
+        extra: "<img src='img/5.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     6: {
-        icon: "🎁",
-        title: "Mini Sürpriz",
-        message: "Bugün sana sanal bir sarılış gönderiyorum! 🤗 Kollarımı açtım, gel içine! Seni o kadar çok özlüyorum ki...",
-        extra: ""
+        icon: "🏢",
+        title: "Enteresan Bir Hediye",
+        message: "Bazen Çarşamba genlerin aktif olsa da seni bana kavuşturduğu için minnettarım. Sen benim en güzel hediyemsin! 🎁",
+        extra: "<img src='img/6.jpg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     7: {
         icon: "📝",
         title: "Sana Bir Söz",
         message: "Sana söz veriyorum: Her zaman yanında olacağım. İyi günde, kötü günde, zor zamanlarda... Elimden asla bırakmayacağım.",
-        extra: ""
+        extra: "<img src='img/7.png' style='max-width: 100%;'>"
     },
     8: {
-        icon: "🍫",
-        title: "Tatlı Bir Gün",
-        message: "Bugün tatlı bir gün olsun! Çikolata kadar tatlısın sen. Aslında daha da tatlısın! 🍫💕",
-        extra: ""
+        icon: "🌸",
+        title: "Güzellik",
+        message: "Gülün gözü olsa senin güzelliğin karşısında daha da parıldardı. Çünkü ben her an seninle parıldıyorum. 🌹",
+        extra: "<img src='img/8.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     9: {
         icon: "💫",
         title: "Dilek Zamanı",
-        message: "Bir dilek hakkın var! Gözlerini kapat ve dile... Ben zaten en büyük dileğimi gerçekleştirdim: Seni bulmak! 🌠",
-        extra: ""
+        message: "Bir dilek hakkın var! Gözlerini kapat ve dile... Ben zaten en büyük dileğimi gerçekleştirdim: Seni bulmak veee bir deeee 🌠",
+        extra: "<img src='img/9.png' style='max-width: 100%;'>"
     },
     10: {
-        icon: "🎬",
-        title: "Film Gecesi",
-        message: "Seninle film izlemek dünyanın en güzel şeyi. Patlamış mısır hazır mı? Bir sonraki buluşmamızda favori filmini izleyelim! 🍿",
-        extra: ""
+        icon: "✉️",
+        title: "Geleceğe Mektup",
+        message: "Bazen tartışabiliriz bazen çok gülebiliriz ama bil ki seni her zaman seveceğim. İşte sana gelecekte açman için küçük bir mektup. 💌",
+        extra: "<button class='open-letter-btn' onclick='openLetter()'>💌 Mektubu Aç 💌</button>"
     },
     11: {
-        icon: "💌",
-        title: "Aşk Mektubu",
-        message: "Keşke kelimeler sana olan sevgimi tam olarak anlatabilse... Ama bil ki, her kelime yetersiz kalıyor. Çünkü seni sevmek kelimelerden öte bir şey. 💌",
-        extra: ""
+        icon: "🎁",
+        title: "Hediye Zamanııı",
+        message: "Bana en büyük hediye sensin. Ama bugün sana küçük bir sürprizim var! Umarım beğenirsin! 🎉",
+        extra: "<img src='img/10.jpeg' style='max-width: 100%; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);'>"
     },
     12: {
-        icon: "🌹",
-        title: "Gül Bahçesi",
-        message: "Sana gerçek güller veremiyorum ama bu sanal güller de içten geliyor: 🌹🌹🌹 Bir gün sana kocaman bir buket alacağım!",
-        extra: ""
-    },
-    13: {
-        icon: "😊",
-        title: "Gülüşün",
-        message: "Senin gülüşün benim en büyük motivasyonum. O gülümsemeyi görmek için her şeyi yaparım. Bugün en az 3 kez gülümse, tamam mı? 😊",
-        extra: ""
-    },
-    14: {
-        icon: "💑",
-        title: "Birlikte",
-        message: "Seninle birlikte olmak hayatımın en güzel kararı. Her günümüz bir macera, her anımız bir hediye. Teşekkür ederim hayatımda olduğun için.",
-        extra: ""
-    },
-    15: {
-        icon: "🎭",
-        title: "Komik Anımız",
-        message: "Hatırlıyor musun o günü? [Buraya komik bir anınızı yazabilirsin] 😂 Seninle gülmek çok güzel!",
-        extra: ""
-    },
-    16: {
-        icon: "🏠",
-        title: "Gelecek Hayallerim",
-        message: "Seninle kurmak istediğim bir gelecek var. Küçük bir ev, sabah kahveleri, akşam sohbetleri... Hepsi seninle güzel olacak. 🏡💕",
-        extra: ""
-    },
-    17: {
-        icon: "🎨",
-        title: "Renklerim",
-        message: "Hayatıma renk kattın. Senden önce her şey gri gibiydi, şimdi gökkuşağı gibi! Sen benim en güzel rengimsin. 🌈",
-        extra: ""
-    },
-    18: {
-        icon: "🧸",
-        title: "Sarılma Günü",
-        message: "Bugün sana ekstra sıkı sarılmak istiyorum! 🤗 Bu sanal sarılış gerçeğinin yerini tutmaz ama... *sarılır* 💕",
-        extra: ""
-    },
-    19: {
-        icon: "✨",
-        title: "Özelsin",
-        message: "Dünyada milyarlarca insan var ama sen bir tanesin. Özelsin, benzersizsin ve benim için dünyanın en değerli insanısın! ✨",
-        extra: ""
-    },
-    20: {
-        icon: "🎄",
-        title: "Yılbaşı Heyecanı",
-        message: "Yeni yıla seninle girmek için sabırsızlanıyorum! Bu yıl da, gelecek yıl da, her yıl seninle... 🎄🎆",
-        extra: ""
-    },
-    21: {
-        icon: "🍪",
-        title: "Kurabiye Zamanı",
-        message: "Keşke şimdi seninle kurabiye yapıyor olsaydık! Belki biraz dağıtırdık mutfağı ama çok eğlenirdik! 🍪",
-        extra: ""
-    },
-    22: {
-        icon: "🌙",
-        title: "İyi Geceler",
-        message: "Her gece uyumadan önce seni düşünüyorum. Rüyalarıma giriyorsun. İyi ki varsın, iyi geceler aşkım! 🌙💤",
-        extra: ""
-    },
-    23: {
-        icon: "🎶",
-        title: "Son Gün Yaklaşıyor",
-        message: "Yarın son gün! Ama bu son değil, sadece bir başlangıç. Sana olan sevgim her gün biraz daha büyüyor! 💝",
-        extra: ""
-    },
-    24: {
         icon: "🎅",
         title: "Mutlu Noeller! 🎄",
         message: "Ve işte final! 24 gün boyunca her gün sana ne kadar özel olduğunu hatırlatmak istedim. Mutlu Noeller aşkım! Seni çok ama çok seviyorum! Bu takvim bitebilir ama sevgim asla bitmeyecek! 💝🎄✨",
